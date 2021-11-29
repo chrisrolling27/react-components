@@ -1,21 +1,26 @@
 
 var GroceryList = () => (
   <div> Groceries needed:
-  <Olive_Oil />
-  <Bacon />
-  </div>
-);
-
-var Olive_Oil = () => (
-  <div> Olive Oil here
+  <GroceryListItem groceries={['Olive Oil', 'Bacon', 'Cheese']}/>
   </div>
 );
 
 
-var Bacon = () => (
-  <div> Bacon
+var GroceryListItem = (props) => {
+
+
+  var onListItemClick = (event) => {
+    console.log('I got clicked');
+  };
+
+  return (
+  <div>
+     <li onClick={onListItemClick}>{props.groceries[0]}</li>
+     <li>{props.groceries[1]}</li>
+     <li>{props.groceries[2]}</li>
   </div>
-);
+  );
+  }
 
 
 
